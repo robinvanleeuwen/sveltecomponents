@@ -1,0 +1,15 @@
+{
+
+  "users": [
+    {{# repeat (queryParam 'total' '1') }}
+    {
+      "id": "{{ faker 'random.number' min=10000 max=100000 }}",
+      "email": "{{ faker 'name.firstName'}}@{{ faker 'name.lastName'}}.com"
+      "firstname": "{{ faker 'name.firstName' }}",
+      "lastname": "{{ faker 'name.lastName' }}",
+      "apikey": "{{ faker 'random.uuid' }}",
+    },
+    {{/ repeat }}
+  ],
+  "total": "{{queryParam 'total' '1'}}"
+}
